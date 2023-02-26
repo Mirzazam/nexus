@@ -11,7 +11,7 @@ pipeline {
         NEXUS_PORT = '8081'
         NEXUS_USER = 'admin'
         NEXUS_PORT_HTTP = '9000'
-        REGISTERY = '18.188.93.114:8081/repository/docker/'
+        REGISTERY = 'http://18.188.93.114:8081/#browse/browse:docker'
         
     }
 
@@ -28,7 +28,7 @@ pipeline {
         stage('Push the docker image to nexus repo') {
             steps {
                     script{
-                        docker.withRegistry('http://'+REGISTERY, NEXUS_CREDS ) {
+                        docker.withRegistry(REGISTERY, NEXUS_CREDS ) {
                             dockerImage.push('latest')
                         }
                     }
