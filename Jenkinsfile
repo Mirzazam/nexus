@@ -14,6 +14,7 @@ pipeline {
         REGISTERY = 'http://3.141.11.80:8085'
         IP_WITHPORT = '3.141.11.80:8085'
         
+        
     }
 
     agent any
@@ -29,7 +30,7 @@ pipeline {
         stage('Push the docker image to nexus repo') {
             steps {
                     sh 'docker login -u "${NEXUS_USER}" "${REGISTERY}" -p "${NEXUS_CREDS}" '
-                    sh ' docker push "${IP_WITHPORT}"/"${DOCKER_IMAGE_NAME}":"${DOCKER_IMAGE_TAG}" '
+                    sh ' docker push 3.141.11.80:8085/jenkins:latest'
                     }
                 
             
