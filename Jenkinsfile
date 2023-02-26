@@ -28,7 +28,7 @@ pipeline {
         stage('Push the docker image to nexus repo') {
             steps {
                     script{
-                        docker.withRegistry(REGISTERY, DOCKER_TOKEN ) {
+                        docker.withRegistry("${REGISTERY}", "${NEXUS_CREDS}" ) {
                             dockerImage.push('latest')
                         }
                     }
