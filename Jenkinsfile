@@ -6,14 +6,9 @@ pipeline {
         DOCKER_IMAGE_NAME = 'jenkins'
         DOCKER_IMAGE_TAG = 'latest'
         DOCKER_TOKEN = credentials('dockertoken')
-        NEXUS_CREDS = credentials('nexus')
-        NEXUS_IP = '18.224.179.108'
-        NEXUS_PORT = '8081'
         NEXUS_USER = 'admin'
-        NEXUS_PORT_HTTP = '9000'
         REGISTERY = 'http://3.141.11.80:8085'
         IP_WITHPORT = '3.141.11.80:8085'
-        registry = '3.141.11.80:8085'
         registryCredentials = 'nexus'
         
         
