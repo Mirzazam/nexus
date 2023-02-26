@@ -6,7 +6,7 @@ pipeline {
         DOCKER_IMAGE_NAME = 'jenkins'
         DOCKER_IMAGE_TAG = 'latest'
         DOCKER_TOKEN = credentials('dockertoken')
-        NEXUS_CREDS = credentials('nexuscreds')
+        NEXUS_CREDS = credentials('nexus')
         NEXUS_IP = '18.224.179.108'
         NEXUS_PORT = '8081'
         NEXUS_USER = 'admin'
