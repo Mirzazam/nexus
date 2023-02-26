@@ -20,7 +20,7 @@ pipeline {
         stage('Build the docker image') {
             steps {
                 
-                    sh 'docker build -t http://18.188.93.114:8085/"${DOCKER_IMAGE_NAME}":"${DOCKER_IMAGE_TAG}" .'
+                    sh 'docker build -t http://18.188.93.114:8085/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} . '
                 
             }
         }
