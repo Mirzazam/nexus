@@ -29,17 +29,22 @@ pipeline {
             }
         }
 
-        stage('Push the docker image to nexus repo') {
+        stage('login to docker hosted repo') {
             steps {
                 script {
                     docker.withRegistry( 'http://'+registry, registryCredentials) {
-                        dockerImage.push()
+                        
                     }
                 }
                     
                     }
                 
             
+        }
+        stage('push the image to nexus repo'){
+            steps{
+                sh 'docker push ${IP_WITHPORT}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}'
+            }
         }
 
         
