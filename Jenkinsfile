@@ -7,12 +7,12 @@ pipeline {
         DOCKER_IMAGE_TAG = 'latest'
         DOCKER_TOKEN = credentials('dockertoken')
         NEXUS_CREDS = credentials('nexuscreds')
-        NEXUS_IP = '18.188.93.114'
+        NEXUS_IP = '18.224.179.108'
         NEXUS_PORT = '8081'
         NEXUS_USER = 'admin'
         NEXUS_PORT_HTTP = '9000'
-        REGISTERY = 'http://18.188.93.114:8085'
-        IP_WITHPORT = '18.188.93.114:8085'
+        REGISTERY = 'http://18.224.179.108:8085'
+        IP_WITHPORT = '18.224.179.108:8085'
         
     }
 
