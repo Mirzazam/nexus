@@ -20,18 +20,15 @@ pipeline {
         stage('Build the docker image') {
             steps {
                 
-                    sh 'docker build -t ${DOCKERHUB_USERNAME}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} .'
+                    sh 'docker build -t http://18.188.93.114:8085/"${DOCKER_IMAGE_NAME}":"${DOCKER_IMAGE_TAG}" .'
                 
             }
         }
 
         stage('Push the docker image to nexus repo') {
             steps {
-                    script{
-                        docker.withRegistry("${REGISTERY}", "${NEXUS_CREDS}" ) {
-                            dockerImage.push('latest')
-                        }
-                    }
+                    sh 'docker login -u "${NEXUS_USER}" "${REGISTERY}" -p "${NEXUS_CREDS}" '
+                    sh ' docker push http://18.188.93.114:8085/"${DOCKER_IMAGE_NAME}":"${DOCKER_IMAGE_TAG}" '
                     }
                 
             
