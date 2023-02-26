@@ -10,6 +10,7 @@ pipeline {
         NEXUS_IP = '18.188.93.114'
         NEXUS_PORT = '8081'
         NEXUS_USER = 'admin'
+        NEXUS_PORT_HTTP = '9000'
         
     }
 
@@ -25,8 +26,8 @@ pipeline {
 
         stage('Push the docker image to nexus repo') {
             steps {
-                        sh 'docker login -u "${USER_USERNAME}" -p "${nexuscreds}" http://${NEXUS_IP}:${NEXUS_PORT}/repository/docker/'
-                        sh 'docker push  http://${NEXUS_IP}:${NEXUS_PORT}"/"${DOCKER_IMAGE_NAME}":"${DOCKER_IMAGE_TAG}"'
+                        sh 'docker login http://${NEXUS_IP}:${NEXUS_PORT_HTTP}/repository/docker/ '
+                        sh 'docker push  http://${NEXUS_IP}:${NEXUS_PORT_HTTP}"/repository/docker/"${DOCKER_IMAGE_NAME}":"${DOCKER_IMAGE_TAG}"'
                     }
                 
             
