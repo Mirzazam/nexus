@@ -11,8 +11,8 @@ pipeline {
         NEXUS_PORT = '8081'
         NEXUS_USER = 'admin'
         NEXUS_PORT_HTTP = '9000'
-        REGISTERY = 'http://3.15.234.131:8085'
-        IP_WITHPORT = '3.15.234.131:8085'
+        REGISTERY = 'http://3.141.11.80:8085'
+        IP_WITHPORT = '3.141.11.80:8085'
         
     }
 
