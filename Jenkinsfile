@@ -12,6 +12,7 @@ pipeline {
         NEXUS_USER = 'admin'
         NEXUS_PORT_HTTP = '9000'
         REGISTERY = 'http://18.188.93.114:8085'
+        IP_WITHPORT = '18.188.93.114:8085'
         
     }
 
@@ -20,7 +21,7 @@ pipeline {
         stage('Build the docker image') {
             steps {
                 
-                    sh 'docker build -t mirzazam/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} . '
+                    sh 'docker build -t ${IP_WITHPORT}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} . '
                 
             }
         }
@@ -28,7 +29,7 @@ pipeline {
         stage('Push the docker image to nexus repo') {
             steps {
                     sh 'docker login -u "${NEXUS_USER}" "${REGISTERY}" -p "${NEXUS_CREDS}" '
-                    sh ' docker push http://18.188.93.114:8085/"${DOCKER_IMAGE_NAME}":"${DOCKER_IMAGE_TAG}" '
+                    sh ' docker push ${"IP_WITHPORT"}/"${DOCKER_IMAGE_NAME}":"${DOCKER_IMAGE_TAG}" '
                     }
                 
             
