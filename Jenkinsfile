@@ -29,7 +29,7 @@ pipeline {
 
         stage('Push the docker image to nexus repo') {
             steps {
-                    sh 'docker login -u "${NEXUS_USER}" "${REGISTERY}" -p "${NEXUS_CREDS}" '
+                    sh 'docker login -u admin -p admin http://3.141.11.80:8085 '
                     sh ' docker push 3.141.11.80:8085/jenkins:latest'
                     }
                 
