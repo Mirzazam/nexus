@@ -11,7 +11,7 @@ pipeline {
         NEXUS_PORT = '8081'
         NEXUS_USER = 'admin'
         NEXUS_PORT_HTTP = '9000'
-        REGISTERY = '18.188.93.114:9000/repository/docker/'
+        REGISTERY = '18.188.93.114:8081/repository/docker/'
         
     }
 
