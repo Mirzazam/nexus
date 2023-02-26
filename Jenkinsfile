@@ -13,6 +13,8 @@ pipeline {
         NEXUS_PORT_HTTP = '9000'
         REGISTERY = 'http://3.141.11.80:8085'
         IP_WITHPORT = '3.141.11.80:8085'
+        registry = '3.141.11.80:8085'
+        registryCredentials = 'nexus'
         
         
     }
@@ -29,8 +31,12 @@ pipeline {
 
         stage('Push the docker image to nexus repo') {
             steps {
-                    sh 'docker login -u "${NEXUS_USER}" -p "${NEXUS_CREDS}"  http://3.141.11.80:8085 '
-                    sh ' docker push 3.141.11.80:8085/jenkins:latest'
+                script {
+                    docker.withRegistry( 'http://'+registry, registryCredentials) {
+                        dockerImage.push()
+                    }
+                }
+                    
                     }
                 
             
