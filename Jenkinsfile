@@ -32,12 +32,12 @@ pipeline {
         stage('login to docker hosted repo') {
             steps {
                 script {
-                    docker.withRegistry( 'http://'+registry, registryCredentials) {
+                    docker.withRegistry( REGISTERY, registryCredentials) {
                         
                     }
                 }
                     
-                    }
+                    } 
                 
             
         }
