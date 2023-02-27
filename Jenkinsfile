@@ -34,6 +34,11 @@ pipeline {
                 sh 'docker push "${IP_WITHPORT}"/"${DOCKER_IMAGE_NAME}":"${DOCKER_IMAGE_TAG}" '
             }
         }
+        stage('logout from docker'){
+            steps{
+                sh 'docker logout'
+            }
+        }
 
 
     }
