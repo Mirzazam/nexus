@@ -5,8 +5,8 @@ pipeline {
         DOCKERHUB_USERNAME = 'mirzazam'
         DOCKER_IMAGE_NAME = 'jenkins'
         DOCKER_IMAGE_TAG = 'updated'
-        REGISTERY = 'http://3.143.231.81:8085'
-        IP_WITHPORT = '3.143.231.81:8085'
+        REGISTERY = 'http://18.222.174.243:8085'
+        IP_WITHPORT = '18.222.174.243:8085'
         registryCredentials = 'nexus'   
         
     }
