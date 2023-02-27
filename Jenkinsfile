@@ -32,7 +32,7 @@ pipeline {
 
         stage('push the image to nexus repo'){
             steps{
-                sh 'docker push ${IP_WITHPORT}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}'
+                sh 'docker login -u admin -p admin http://3.143.232.191:8085'
             }
         }
     }
