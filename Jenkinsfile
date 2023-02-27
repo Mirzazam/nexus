@@ -9,7 +9,7 @@ pipeline {
         NEXUS_USER = 'admin'
         REGISTERY = 'http://3.143.232.191:8085'
         IP_WITHPORT = '3.143.232.191:8085'
-        registryCredentials = 'nexus'
+        registryCredentials = 'nexus'   
         
     }
 
