@@ -30,11 +30,7 @@ pipeline {
                     } 
         }
 
-        stage('push the image to nexus repo'){
-            steps{
-                sh 'docker login -u admin -p admin http://3.143.232.191:8085'
-            }
-        }
+
     }
 }
 
