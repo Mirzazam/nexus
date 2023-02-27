@@ -24,15 +24,11 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry( REGISTERY, registryCredentials) {
+                        sh 'docker push "${IP_WITHPORT}"/"${DOCKER_IMAGE_NAME}":"${DOCKER_IMAGE_TAG}" '
                     }
                 }
                     
                     } 
-        }
-        stage('push the image'){
-            steps{
-                sh 'docker push "${IP_WITHPORT}"/"${DOCKER_IMAGE_NAME}":"${DOCKER_IMAGE_TAG}" '
-            }
         }
         stage('logout from docker'){
             steps{
